@@ -57,6 +57,14 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Contenedor de galería para mostrar imágenes en fila */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 /* Pie de página fijo abajo */
 footer {
   background-color: #f1f1f1;
