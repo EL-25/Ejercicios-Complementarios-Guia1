@@ -1,0 +1,232 @@
+/* Variables de color Soft Red */
+:root {
+    --rojo-suave: #ff6b6b;
+    --rojo-fuerte: #ee5253;
+    --fondo-claro: #fffafa;
+    --texto-oscuro: #2d3436;
+    --blanco: #ffffff;
+}
+
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-claro);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--blanco);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--rojo-suave);
+}
+
+.Encabezado {
+    color: var(--rojo-fuerte);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.Subtitulo {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+/* Animación del Menú */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--rojo-suave);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--rojo-suave);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Contenedor Principal */
+.contenedor-contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sección Perfil (Sobre Mí) */
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 4rem 0;
+    flex-wrap: wrap-reverse; /* Foto arriba en móviles */
+}
+
+.perfil-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.perfil h2 {
+    color: var(--rojo-fuerte);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+/* Imagen de Perfil Responsiva y Animada */
+.perfil-img-container {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.img-personal {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--blanco);
+    box-shadow: 0 10px 25px rgba(238, 82, 83, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.img-personal:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+/* Sección Experiencia Centrada */
+.seccion-centrada {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.seccion-centrada h3 {
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+    color: var(--texto-oscuro);
+}
+
+.galeria-imagenes {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas */
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background: var(--blanco);
+    width: 340px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 220px; /* Tamaño fijo e igual para todas */
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se estire */
+    transition: transform 0.6s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(238, 82, 83, 0.15);
+}
+
+.tarjeta:hover img {
+    transform: scale(1.1);
+}
+
+.info {
+    padding: 1.5rem;
+}
+
+.info h4 {
+    color: var(--rojo-fuerte);
+    margin-bottom: 10px;
+}
+
+/* Contacto */
+.contacto-Anderson {
+    background-color: var(--blanco);
+    padding: 3rem;
+    text-align: center;
+    border-radius: 15px;
+    margin: 3rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.contacto-Anderson a {
+    color: var(--rojo-suave);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: var(--rojo-fuerte);
+    color: var(--blanco);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 600px) {
+    .perfil {
+        text-align: center;
+    }
+    .Encabezado {
+        font-size: 1.5rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .tarjeta {
+        width: 100%; /* Tarjetas al 100% en celular */
+    }
+}
